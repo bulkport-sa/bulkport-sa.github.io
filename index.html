@@ -7,6 +7,8 @@
 <meta name="keywords" content="mining services, logistics, construction, environmental compliance, South Africa" />
 <title>BulkPort Solutions | Multidisciplinary Professional Services</title>
 
+
+
 <style>
     * {
         margin: 0;
@@ -29,6 +31,7 @@
         top: 0;
         width: 100%;
         background: rgba(14, 14, 14, 0.95);
+        -webkit-backdrop-filter: blur(10px);
         backdrop-filter: blur(10px);
         padding: 15px 2%;
         display: flex;
@@ -54,6 +57,7 @@
     .nav-links a {
         color: white;
         text-decoration: none;
+        -webkit-transition: color 0.3s ease;
         transition: color 0.3s ease;
         font-size: 0.95rem;
     }
@@ -80,8 +84,11 @@
     /* ============ HERO ============ */
     .hero {
         height: 100vh;
-        background: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=2400&q=80')
-            center/cover fixed;
+        background-image: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=2400&q=80');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -113,6 +120,7 @@
         text-transform: uppercase;
         letter-spacing: 4px;
         margin-bottom: 15px;
+        -webkit-animation: slideDown 1s ease-out;
         animation: slideDown 1s ease-out;
     }
 
@@ -164,16 +172,19 @@
         background: #1a1a1a;
         border-radius: 18px;
         overflow: hidden;
+        -webkit-transition: all 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
         transition: all 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
 
     .card.reveal {
         opacity: 0;
+        -webkit-transform: translateY(40px);
         transform: translateY(40px);
     }
 
     .card.active {
         opacity: 1;
+        -webkit-transform: translateY(0);
         transform: translateY(0);
     }
 
@@ -182,12 +193,14 @@
         height: 220px;
         object-fit: cover;
         filter: brightness(0.8);
+        -webkit-transition: all 0.4s ease;
         transition: all 0.4s ease;
         display: block;
     }
 
     .card:hover img {
         filter: brightness(1);
+        -webkit-transform: scale(1.05);
         transform: scale(1.05);
     }
 
@@ -236,6 +249,29 @@
         background: rgba(0, 0, 0, 0.3);
     }
 
+    /* ============ PARALLAX SECTIONS ============ */
+    .parallax-1 {
+        background-image: url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=2400&q=80');
+    }
+
+    .parallax-2 {
+        background-image: url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=2400&q=80');
+    }
+
+    .parallax-3 {
+        background-image: url('https://cdn.pixabay.com/photo/2016/09/01/15/18/industrial-1636387_640.jpg');
+    }
+
+    .parallax-4 {
+        background-image: url('https://26576696.fs1.hubspotusercontent-eu1.net/hub/26576696/hubfs/energy-consumption-and-co2-gas-emissions-are-increasing-light-bulbs-with-green-eco-city-renewable-energy-by-2050-carbon-neutral-energy-save-energy-creative-idea-concept-generative-ai-free-phot.jpg?width=3000&name=energy-consumption-and-co2-gas-emissions-are-increasing-light-bulbs-with-green-eco-city-renewable-energy-by-2050-carbon-neutral-energy-save-energy-creative-idea-concept-generative-ai-free-phot.jpg');
+    }
+
+    /* ============ LINK STYLING ============ */
+    a.link-styled {
+        color: #00a8ff;
+        text-decoration: none;
+    }
+
     /* ============ INFO BOX ============ */
     .info-box {
         background: #1a1a1a;
@@ -243,11 +279,13 @@
         border-radius: 15px;
         margin-bottom: 40px;
         border-left: 4px solid #00a8ff;
+        -webkit-transition: all 0.3s ease;
         transition: all 0.3s ease;
     }
 
     .info-box:hover {
         background: #222;
+        -webkit-transform: translateX(5px);
         transform: translateX(5px);
     }
 
@@ -287,6 +325,8 @@
         text-align: center;
     }
 
+
+
     /* ============ MOBILE RESPONSIVE ============ */
     @media (max-width: 768px) {
         nav {
@@ -325,6 +365,17 @@
             height: 40vh;
             background-attachment: scroll;
         }
+
+        /* Ensure hero background scales on mobile and avoid fixed attachment issues */
+        .hero {
+            background-attachment: scroll;
+            background-position: center;
+            background-size: cover;
+            height: auto;
+            min-height: 60vh;
+            padding: 80px 20px;
+            margin-top: 60px;
+        }
     }
 
     @media (max-width: 480px) {
@@ -350,6 +401,7 @@
         <li><a href="#leadership">Leadership</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
+
     <div class="menu-toggle" id="menuToggle">
         <span></span>
         <span></span>
@@ -365,9 +417,7 @@
 </div>
 
 <!-- PARALLAX BREAK -->
-<div class="parallax"
-     style="background-image:url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=2400&q=80');">
-</div>
+<div class="parallax parallax-1"></div>
 
 <!-- COMPANY OVERVIEW -->
 <section>
@@ -412,9 +462,7 @@
 </section>
 
 <!-- PARALLAX BREAK -->
-<div class="parallax"
-     style="background-image:url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=2400&q=80');">
-</div>
+<div class="parallax parallax-2"></div>
 
 <!-- SERVICES -->
 <section id="services">
@@ -480,9 +528,7 @@
 </section>
 
 <!-- PARALLAX BREAK -->
-<div class="parallax"
-     style="background-image:url('https://cdn.pixabay.com/photo/2016/09/01/15/18/industrial-1636387_640.jpg');">
-</div>
+<div class="parallax parallax-3"></div>
 
 <!-- LEADERSHIP -->
 <section id="leadership">
@@ -499,17 +545,15 @@
 </section>
 
 <!-- PARALLAX BREAK -->
-<div class="parallax"
-     style="background-image:url('https://26576696.fs1.hubspotusercontent-eu1.net/hub/26576696/hubfs/energy-consumption-and-co2-gas-emissions-are-increasing-light-bulbs-with-green-eco-city-renewable-energy-by-2050-carbon-neutral-energy-save-energy-creative-idea-concept-generative-ai-free-phot.jpg?width=3000&name=energy-consumption-and-co2-gas-emissions-are-increasing-light-bulbs-with-green-eco-city-renewable-energy-by-2050-carbon-neutral-energy-save-energy-creative-idea-concept-generative-ai-free-phot.jpg');">
-</div>
+<div class="parallax parallax-4"></div>
 
 <!-- CONTACT -->
 <section id="contact">
     <h2>Contact & Support</h2>
     <div class="info-box">
         <p><strong>Contact Person:</strong> Siyethaba Funeka</p>
-        <p><strong>Phone:</strong> <a href="tel:+27604024489" style="color: #00a8ff; text-decoration: none;">+27 60 402 4489</a></p>
-        <p><strong>Email:</strong> <a href="mailto:siyethaba@gmail.com" style="color: #00a8ff; text-decoration: none;">siyethaba@gmail.com</a></p>
+        <p><strong>Phone:</strong> <a href="tel:+27604024489" class="link-styled">+27 60 402 4489</a></p>
+        <p><strong>Email:</strong> <a href="mailto:siyethaba@gmail.com" class="link-styled">siyethaba@gmail.com</a></p>
     </div>
 </section>
 
@@ -524,12 +568,14 @@
             <p>All Rights Reserved</p>
         </div>
         <div class="footer-section">
-            <p>Email: <a href="mailto:info@bulkport-sa.com" style="color: #00a8ff; text-decoration: none;">info@bulkport-sa.com</a></p>
-            <p>Web: <a href="https://bulkport-sa.github.io/" style="color: #00a8ff; text-decoration: none;">bulkport-sa.github.io</a></p>
+            <p>Email: <a href="mailto:info@bulkport-sa.com" class="link-styled">info@bulkport-sa.com</a></p>
+            <p>Web: <a href="https://bulkport-sa.github.io/" class="link-styled">bulkport-sa.github.io</a></p>
             <p>Reg No: 2025/694292/07</p>
         </div>
     </div>
 </footer>
+
+
 
 <script>
     // Mobile menu toggle
